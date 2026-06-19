@@ -96,3 +96,58 @@
 <button type="submit" class="btn-submit"><span>📲</span> Enviar pelo WhatsApp</button>
 <p class="note">Os dados serão enviados via WhatsApp.</p>
 </form></main>
+<script>
+function mask(el,fn){el.addEventListener('input',()=>{el.value=fn(el.value);});}
+mask(document.getElementById('cpf'),v=>{v=v.replace(/\D/g,'').slice(0,11);return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');});
+mask(document.getElementById('cpf_conjuge'),v=>{v=v.replace(/\D/g,'').slice(0,11);return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');});
+mask(document.getElementById('telefone'),v=>{v=v.replace(/\D/g,'').slice(0,11);if(v.length<=10)return v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3');return v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');});
+document.getElementById('fichaForm').addEventListener('submit',function(e){
+e.preventDefault();
+const g=id=>document.getElementById(id)?.value?.trim()||'—';
+const r=name=>{const el=document.querySelector(`input[name="${name}"]:checked`);return el?el.value:'—';};
+const msg=`
+🚗 *MOVE BRASIL – CARBANK*
+📋 *Nova Ficha Cadastral*
+
+*── DADOS DA OPERAÇÃO ──*
+🏢 Concessionária: ${g('concessionaria')}
+👤 Vendedor: ${g('vendedor')}
+🚙 Veículo: ${g('modelo_veiculo')}
+💰 Entrada: ${g('entrada_pct')}
+
+*── DADOS PESSOAIS ──*
+👤 Nome: ${g('nome')}
+🪪 CPF: ${g('cpf')}
+📄 RG: ${g('rg')} | ${g('orgao')}
+🎂 Nascimento: ${g('nascimento')}
+🌍 Nacionalidade: ${g('nacionalidade')} | ${g('naturalidade')}
+⚧ Sexo: ${r('sexo')} | 💍 Estado Civil: ${g('estado_civil')}
+👩 Mãe: ${g('mae')}
+
+*── ENDEREÇO ──*
+📍 ${g('end_res')}, ${g('end_num')} ${g('complemento')}
+${g('bairro_res')} – ${g('cidade_res')}/${g('uf_res')} CEP: ${g('cep_res')}
+📞 ${g('telefone')} | 📧 ${g('email')}
+
+*── PROFISSIONAL ──*
+💼 ${g('profissao')} | 💰 R$ ${g('renda')} | ➕ R$ ${g('outras_rendas')}
+🏢 ${g('end_com')} – ${g('bairro_com')} – ${g('cidade_com')}/${g('uf_com')}
+
+*── CÔNJUGE ──*
+${g('cpf_conjuge')} | ${g('nome_conjuge')}
+
+*── BENS ──*
+1) ${document.querySelector('[name="bem_especie_1"]')?.value||'—'} — ${document.querySelector('[name="bem_local_1"]')?.value||'—'}
+2) ${document.querySelector('[name="bem_especie_2"]')?.value||'—'} — ${document.querySelector('[name="bem_local_2"]')?.value||'—'}
+
+*── PEP ──*
+Cargo público: ${r('pep_cargo')} | Agente público: ${r('pep_ligacao')}
+
+*── DECLARAÇÕES ──*
+1:${document.getElementById('decl1').checked?'✅':'❌'} 2:${document.getElementById('decl2').checked?'✅':'❌'} 3:${document.getElementById('decl3').checked?'✅':'❌'} 4:${document.getElementById('decl4').checked?'✅':'❌'} 5:${document.getElementById('decl5').checked?'✅':'❌'} 6:${document.getElementById('decl6').checked?'✅':'❌'}
+
+_Enviado via Move Brasil – CarBank_`.trim();
+window.open(`https://wa.me/5551992779921?text=${encodeURIComponent(msg)}`,'_blank');
+});
+</script>
+</body></html>
