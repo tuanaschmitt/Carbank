@@ -57,3 +57,42 @@
 <div class="grid col-2" style="margin-top:14px">
 <div class="field"><label>Telefone</label><input type="tel" id="telefone" name="telefone" placeholder="(51) 99999-9999" /></div>
 <div class="field"><label>E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" /></div></div></div>
+<div class="card"><div class="section-title">Dados Profissionais & Renda</div>
+<div class="grid col-3">
+<div class="field"><label>Profissão</label><input type="text" id="profissao" name="profissao" placeholder="Sua profissão" /></div>
+<div class="field"><label>Renda Mensal (R$)</label><input type="text" id="renda" name="renda" placeholder="Ex: 4.500,00" /></div>
+<div class="field"><label>Outras Rendas (R$)</label><input type="text" id="outras_rendas" name="outras_rendas" placeholder="Ex: 1.000,00" /></div></div>
+<div class="grid col-2" style="margin-top:14px">
+<div class="field"><label>Endereço Comercial</label><input type="text" id="end_com" name="end_com" placeholder="Rua / Avenida" /></div>
+<div class="field"><label>Bairro Comercial</label><input type="text" id="bairro_com" name="bairro_com" placeholder="Bairro" /></div></div>
+<div class="grid col-3" style="margin-top:14px">
+<div class="field"><label>Cidade Comercial</label><input type="text" id="cidade_com" name="cidade_com" placeholder="Cidade" /></div>
+<div class="field"><label>UF</label><input type="text" id="uf_com" name="uf_com" placeholder="RS" maxlength="2" /></div>
+<div class="field"><label>CEP</label><input type="text" id="cep_com" name="cep_com" placeholder="00000-000" maxlength="9" /></div></div>
+<div class="grid col-2" style="margin-top:14px">
+<div class="field"><label>Telefone Comercial</label><input type="tel" id="tel_com" name="tel_com" placeholder="(51) 3XXX-XXXX" /></div>
+<div class="field"><label>Ramal</label><input type="text" id="ramal" name="ramal" placeholder="Ramal" /></div></div></div>
+<div class="card"><div class="section-title">Dados do Cônjuge</div>
+<div class="grid col-2">
+<div class="field"><label>CPF do Cônjuge</label><input type="text" id="cpf_conjuge" name="cpf_conjuge" placeholder="000.000.000-00" maxlength="14" /></div>
+<div class="field"><label>Nome do Cônjuge</label><input type="text" id="nome_conjuge" name="nome_conjuge" placeholder="Nome completo" /></div></div></div>
+<div class="card"><div class="section-title">Bens Declarados</div>
+<div class="bem-row"><div class="field"><label>Espécie</label><input type="text" name="bem_especie_1" placeholder="Ex: Veículo" /></div>
+<div class="field"><label>Características</label><input type="text" name="bem_local_1" placeholder="Ex: Gol 2020" /></div></div>
+<div class="bem-row"><div class="field"><label>Espécie</label><input type="text" name="bem_especie_2" placeholder="Ex: Imóvel" /></div>
+<div class="field"><label>Características</label><input type="text" name="bem_local_2" placeholder="Ex: Rua X, Lajeado" /></div></div></div>
+<div class="card"><div class="section-title">Pessoa Exposta Politicamente</div>
+<div class="field" style="margin-bottom:16px"><label>Exerceu cargo público nos últimos 5 anos?</label>
+<div class="radio-group" style="margin-top:8px"><label class="radio-item"><input type="radio" name="pep_cargo" value="Sim" /> Sim</label><label class="radio-item"><input type="radio" name="pep_cargo" value="Não" checked /> Não</label></div></div>
+<div class="field"><label>Possui ligação com Agente Público?</label>
+<div class="radio-group" style="margin-top:8px"><label class="radio-item"><input type="radio" name="pep_ligacao" value="Sim" /> Sim</label><label class="radio-item"><input type="radio" name="pep_ligacao" value="Não" checked /> Não</label></div></div></div>
+<div class="card"><div class="section-title">Declarações e Autorizações</div>
+<div class="decl-block"><div class="decl-num">1.</div>Em atendimento à Circular BACEN 3.978/20, as informações são verídicas e de minha responsabilidade.<div class="decl-check"><input type="checkbox" id="decl1" name="decl1" /><span>Li e concordo</span></div></div>
+<div class="decl-block"><div class="decl-num">2.</div>Autorizo consulta à SERASA S.A., Boa Vista Serviços S.A. e entidades congêneres.<div class="decl-check"><input type="checkbox" id="decl2" name="decl2" /><span>Li e concordo</span></div></div>
+<div class="decl-block"><div class="decl-num">3.</div>Autorizo consulta e registro no SCR conforme Resolução CMN 4.571/2017.<div class="decl-check"><input type="checkbox" id="decl3" name="decl3" /><span>Li e concordo</span></div></div>
+<div class="decl-block"><div class="decl-num">4.</div>Autorizo compartilhamento com empresas do Grupo Volkswagen.<div class="decl-check"><input type="checkbox" id="decl4" name="decl4" /><span>Li e concordo</span></div></div>
+<div class="decl-block"><div class="decl-num">5.</div>Autorizo abertura de cadastro em banco de dados (Lei 12.414/11).<div class="decl-check"><input type="checkbox" id="decl5" name="decl5" /><span>Li e concordo</span></div></div>
+<div class="decl-block"><div class="decl-num">6.</div>Declaro ciência do tratamento de dados conforme LGPD (Lei 13.709/2018).<div class="decl-check"><input type="checkbox" id="decl6" name="decl6" /><span>Li e concordo</span></div></div></div>
+<button type="submit" class="btn-submit"><span>📲</span> Enviar pelo WhatsApp</button>
+<p class="note">Os dados serão enviados via WhatsApp.</p>
+</form></main>
